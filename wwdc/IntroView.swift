@@ -15,7 +15,6 @@ struct IntroView: View {
     var body: some View {
 //        NavigationStack {
             ZStack {
-                // Background image
                 Image("bg3")
                     .resizable()
                     .scaledToFill()
