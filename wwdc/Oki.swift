@@ -48,10 +48,10 @@ struct OkiView: View {
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
-                        Image(systemName: "arrow.left.circle.fill")
+                        Image(systemName: "arrow.left.circle")
                             .resizable()
                             .frame(width: 35, height: 35)
-                            .foregroundColor(.blue)
+                            .foregroundColor(.blue.opacity(0.75))
                             .padding(.leading, 35).padding(.top, 24)
                         }
                     
@@ -121,6 +121,7 @@ struct OkiView: View {
                         .padding()
                         .background(Color.blue)
                         .foregroundColor(.white)
+                        .fontWeight(.semibold)
                         .cornerRadius(10)
                                                
                         
@@ -131,8 +132,7 @@ struct OkiView: View {
                     Group {
                         if let ingredient = selectedIngredient, isShowingDetail {
                             IngredientDetailView(ingredient: ingredient, onFavoriteToggle: {
-                                // Handle the favorite toggle action here.
-                                // Update the ingredient's favorite status in your data model.
+                                
                             }, onDismiss: {
                                 self.isShowingDetail = false
                             })
@@ -144,28 +144,30 @@ struct OkiView: View {
     }
 }
 
-
 struct IngredientDetailView: View {
+    
+    @State private var isFavorite: Bool = false
+
     var ingredient: Ingredient
     var onFavoriteToggle: () -> Void
     var onDismiss: () -> Void
     
     var body: some View {
         ScrollView {
-        VStack {
-            HStack {
-                Spacer()
-                Button(action: onDismiss) {
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(.red)
-                        .padding()
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: onDismiss) {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.red)
+                            .font(.system(size: 22))
+                            .padding()
+                    }
                 }
-            }
-            .padding(.top, 10)
-            .padding(.trailing, 10)
-            .cornerRadius(20)
+                .padding(.top, 10)
+                .padding(.trailing, 10)
+                .cornerRadius(20)
 
-            
                 VStack(alignment: .leading, spacing: 18) {
                     HStack {
                         Text(ingredient.name)
@@ -175,39 +177,76 @@ struct IngredientDetailView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(height: 45)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                     .frame(maxWidth: .infinity, alignment: .center)
                     
-                    HStack{
-                        Button(action: onFavoriteToggle) {
-                            Image(systemName: ingredient.isFavorite ? "heart.fill" : "heart")
-                                .resizable()
-                                .frame(width: 25, height: 25)
-                                .foregroundColor(ingredient.isFavorite ? .red : .gray)
-                        }.padding(.trailing, 8)
-                        Button(action: {}) {
-                            Image(systemName: "square.and.arrow.up")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 25))
+                    HStack {
+                        Button(action: {
+                                self.isFavorite.toggle()
+                            }) {
+                                Image(systemName: isFavorite ? "heart.fill" : "heart")
+                                    .resizable()
+                                    .frame(width: 25, height: 25)
+                                    .foregroundColor(isFavorite ? .red.opacity(0.75) : .gray)
+                            }
+                            .padding(.trailing, 8)
+                        Text("Add to Favorites")
+                        
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center).padding(.bottom, 15)
+
+                    HStack {
+                        VStack{
+                            Text("Description")
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                .font(.system(size: 20)).fontWeight(.bold).padding(.bottom, 8)
+                            Text(ingredient.info)
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading).padding(.trailing, 15)
                         }
-                    }.frame(maxWidth: .infinity, alignment: .center)
-
-                    SectionView(title: "Description", text: ingredient.info)
-                    SectionView(title: "Cultural Significance", text: ingredient.culture)
-
-                    Text("Origin")
-                        .font(.headline)
-
-                    Image(ingredient.mapImage)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 200)
-
+                        Image(ingredient.imager)
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .padding(.trailing, 25)
+                    }
+                    .padding(.horizontal).padding(.bottom, 15)
+                    
+                    HStack {
+                        VStack{
+                            Text("Origin & Culture")
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                .font(.system(size: 20)).fontWeight(.bold).padding(.bottom, 8)
+                            Text(ingredient.culture)
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading).padding(.trailing, 15)
+                        }
+                        Image(ingredient.mapImage)
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .padding(.trailing, 30)
+                    }
+                    .padding(.horizontal).padding(.bottom, 15)
+                    
+                    Text("Rich in: ")
+                        .font(.system(size: 20))
+                        .fontWeight(.bold)
+                        .padding(.bottom, 8).padding(.horizontal)
+                    
+                    HStack {
+                        ForEach(ingredient.vitamins, id: \.self) { vitamin in
+                            Text(vitamin)
+                                .padding(.horizontal, 12).padding(.vertical, 6)
+                                .background(Color.red.opacity(0.2))
+                                .cornerRadius(5)
+                        }.padding(.trailing, 15)
+                    }
+                    .padding(.bottom, 8).padding(.horizontal)
+                    
                     SectionView(title: "Nutritional Info", text: ingredient.nutr)
                     SectionView(title: "Recipes & Uses", text: ingredient.recAndUse)
-
                 }
-                .padding()
+                .padding(.horizontal).padding(.bottom, 35)
             }
         }
         .frame(width: 600, height: 420)
@@ -226,12 +265,13 @@ struct SectionView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(title)
-                .font(.headline)
+                .font(.system(size: 20))
                 .padding(.top, 10)
+                .fontWeight(.bold)
             Text(text)
                 .padding(.top, 5)
                 .fixedSize(horizontal: false, vertical: true)
-        }
+        }.padding(.horizontal)
     }
 }
 

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
+//        NavigationView {
             ZStack {
                 Image("bg_content")
                     .resizable()
@@ -11,7 +11,7 @@ struct ContentView: View {
                 
                 VStack {
                     Spacer()
-                    NavigationLink(destination: SecondView()) {
+                    NavigationLink(destination: IntroView()) {
                         Text("Play!")
                             .foregroundColor(.white)
                             .padding(.horizontal, 100)
@@ -23,8 +23,8 @@ struct ContentView: View {
                     .padding(.bottom, 135)
                 }
             }
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
+//        }
+//        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
