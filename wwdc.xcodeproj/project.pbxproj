@@ -11,6 +11,16 @@
 		E01BC60D2B87437000DB48E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BC60C2B87437000DB48E3 /* ContentView.swift */; };
 		E01BC60F2B87437100DB48E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01BC60E2B87437100DB48E3 /* Assets.xcassets */; };
 		E01BC6122B87437100DB48E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01BC6112B87437100DB48E3 /* Preview Assets.xcassets */; };
+		E01BC6192B8743BA00DB48E3 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BC6182B8743BA00DB48E3 /* Ingredients.swift */; };
+		E01BC61B2B8743CB00DB48E3 /* Oki.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BC61A2B8743CB00DB48E3 /* Oki.swift */; };
+		E01BC61D2B8743E100DB48E3 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BC61C2B8743E100DB48E3 /* Recipes.swift */; };
+		E01BC6212B874D5600DB48E3 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BC6202B874D5600DB48E3 /* SecondView.swift */; };
+		E01BC6232B87F4FC00DB48E3 /* DraggableIngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BC6222B87F4FC00DB48E3 /* DraggableIngredientView.swift */; };
+		E01BC6272B87FBB400DB48E3 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BC6262B87FBB400DB48E3 /* PlaceholderView.swift */; };
+		E01BC6292B8809B400DB48E3 /* boardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BC6282B8809B400DB48E3 /* boardViewModel.swift */; };
+		E01BC6312B894A5000DB48E3 /* AnimatedGIFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BC6302B894A5000DB48E3 /* AnimatedGIFView.swift */; };
+		E01BC6352B8951D000DB48E3 /* GIFLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BC6342B8951D000DB48E3 /* GIFLoader.swift */; };
+		E01BC63C2B8AB2A600DB48E3 /* OrientationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BC63B2B8AB2A600DB48E3 /* OrientationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +29,16 @@
 		E01BC60C2B87437000DB48E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E01BC60E2B87437100DB48E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E01BC6112B87437100DB48E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E01BC6182B8743BA00DB48E3 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
+		E01BC61A2B8743CB00DB48E3 /* Oki.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oki.swift; sourceTree = "<group>"; };
+		E01BC61C2B8743E100DB48E3 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
+		E01BC6202B874D5600DB48E3 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		E01BC6222B87F4FC00DB48E3 /* DraggableIngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableIngredientView.swift; sourceTree = "<group>"; };
+		E01BC6262B87FBB400DB48E3 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		E01BC6282B8809B400DB48E3 /* boardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boardViewModel.swift; sourceTree = "<group>"; };
+		E01BC6302B894A5000DB48E3 /* AnimatedGIFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGIFView.swift; sourceTree = "<group>"; };
+		E01BC6342B8951D000DB48E3 /* GIFLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFLoader.swift; sourceTree = "<group>"; };
+		E01BC63B2B8AB2A600DB48E3 /* OrientationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +72,18 @@
 			isa = PBXGroup;
 			children = (
 				E01BC60A2B87437000DB48E3 /* wwdcApp.swift */,
+				E01BC6182B8743BA00DB48E3 /* Ingredients.swift */,
+				E01BC61A2B8743CB00DB48E3 /* Oki.swift */,
 				E01BC60C2B87437000DB48E3 /* ContentView.swift */,
+				E01BC6202B874D5600DB48E3 /* SecondView.swift */,
+				E01BC61C2B8743E100DB48E3 /* Recipes.swift */,
+				E01BC63B2B8AB2A600DB48E3 /* OrientationView.swift */,
 				E01BC60E2B87437100DB48E3 /* Assets.xcassets */,
+				E01BC6222B87F4FC00DB48E3 /* DraggableIngredientView.swift */,
+				E01BC6282B8809B400DB48E3 /* boardViewModel.swift */,
+				E01BC6342B8951D000DB48E3 /* GIFLoader.swift */,
+				E01BC6302B894A5000DB48E3 /* AnimatedGIFView.swift */,
+				E01BC6262B87FBB400DB48E3 /* PlaceholderView.swift */,
 				E01BC6102B87437100DB48E3 /* Preview Content */,
 			);
 			path = wwdc;
@@ -137,8 +167,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E01BC6232B87F4FC00DB48E3 /* DraggableIngredientView.swift in Sources */,
+				E01BC61D2B8743E100DB48E3 /* Recipes.swift in Sources */,
 				E01BC60D2B87437000DB48E3 /* ContentView.swift in Sources */,
+				E01BC6192B8743BA00DB48E3 /* Ingredients.swift in Sources */,
 				E01BC60B2B87437000DB48E3 /* wwdcApp.swift in Sources */,
+				E01BC6292B8809B400DB48E3 /* boardViewModel.swift in Sources */,
+				E01BC6312B894A5000DB48E3 /* AnimatedGIFView.swift in Sources */,
+				E01BC61B2B8743CB00DB48E3 /* Oki.swift in Sources */,
+				E01BC6352B8951D000DB48E3 /* GIFLoader.swift in Sources */,
+				E01BC6212B874D5600DB48E3 /* SecondView.swift in Sources */,
+				E01BC6272B87FBB400DB48E3 /* PlaceholderView.swift in Sources */,
+				E01BC63C2B8AB2A600DB48E3 /* OrientationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +312,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"wwdc/Preview Content\"";
+				DEVELOPMENT_TEAM = 8Q64JA6KCC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -300,6 +341,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"wwdc/Preview Content\"";
+				DEVELOPMENT_TEAM = 8Q64JA6KCC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

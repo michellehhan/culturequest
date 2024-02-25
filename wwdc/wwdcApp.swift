@@ -11,7 +11,7 @@ import SwiftUI
 struct wwdcApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            OrientationView()
         }
     }
 }

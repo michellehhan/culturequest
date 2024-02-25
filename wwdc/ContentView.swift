@@ -1,24 +1,35 @@
-//
-//  ContentView.swift
-//  wwdc
-//
-//  Created by Michelle Han on 2/22/24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            ZStack {
+                Image("bg_content")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    Spacer()
+                    NavigationLink(destination: SecondView()) {
+                        Text("Play!")
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 100)
+                            .padding(.vertical, 15)
+                            .background(Color.green)
+                            .cornerRadius(13)
+                            .font(.system(size: 30))
+                    }
+                    .padding(.bottom, 135)
+                }
+            }
         }
-        .padding()
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
